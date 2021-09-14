@@ -1,0 +1,154 @@
+.body{
+    width: 100%;
+    height: 100%;
+}
+
+.body-top{
+    width: 100%;
+}
+
+.header-admin{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right,#39425F  ,#65719A 80%);
+    
+}
+
+.header-admin .logo-rikkei{
+    width: 25%;
+}
+
+.header-admin .icon-admin{
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-admin span {
+    width: 50px;
+    padding: 15px;
+    cursor: pointer;
+    
+}
+
+.logo-rikkei img{
+    width: 80px;
+    height: 100%;
+}
+
+.header-admin span:hover {
+    background-color: aliceblue;
+} 
+
+.body-side{
+    width: 26%;
+    height: 919px;
+    background: linear-gradient(to right,#39425F ,#65719A);
+    padding-top: 60px;
+}
+
+.body-side img{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+    border-radius: 100rem;
+
+}
+
+.name_admin{
+    margin-top: 10px;
+    text-align: center;
+    color: aliceblue;
+
+}
+
+.body-content{
+    display: flex;
+
+
+}
+
+.menu-admin{
+    list-style: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+    
+}
+
+.menu-admin li a{
+    padding: 30px;
+    cursor: pointer;
+}
+
+.table-box{
+    width: 80%;
+}
+
+.table {
+    table-layout: fixed;
+}
+  
+.table th, td {
+    padding: 10px 20px;
+    text-align: center;
+    word-wrap: break-word;
+    
+}
+
+.table thead {
+    background: #f9f9f9;
+    display: table;
+    width: 98.5%;
+}
+
+.table tbody {
+    height: 400px;
+    overflow: auto;
+    display: block;
+    width: 100%;
+}
+.table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table tr{
+    table-layout: fixed;
+    width: 100%;
+}
+ 
+.find-info{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+ 
+.find-info button{
+    width: 20%;
+}
+
+
+.menu-admin li:hover{
+    background-color: white;
+}
+
+.menu-admin li:hover a{
+    color: #39425F;
+    
+}
+
+.menu-admin li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+

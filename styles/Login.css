@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+
+  
+}
+
+
+.back-to-login{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 100rem;
+    
+}
+
+.back-to-login a{
+    color: black;
+    display: block;
+    width: 100%;
+    height: 100%; 
+    padding: 7px 12px;
+    
+
+}
+
+.back-to-login:hover{
+    background-color: black;
+    
+}
+
+.back-to-login:hover a{
+    
+    color: whitesmoke;
+}
+.body-login{
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://scontent.fhan1-1.fna.fbcdn.net/v/t1.6435-9/218239802_1502936333376272_7439598133378827188_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8631f5&_nc_ohc=JZ0EKuDWUyUAX-iVTgA&_nc_ht=scontent.fhan1-1.fna&oh=5a1a2b3549636812477e09c2653ed7b0&oe=6149DAB8');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: padding-box;
+    z-index: 1;
+    font-size: 16px;
+    
+}
+.body-login::before{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.body-login-content{
+    z-index: 4;
+    width: 40%;
+    margin: auto;
+    position: absolute;
+    left: 30%;
+    bottom: 30%;
+    background-color: aliceblue;
+    opacity: 0.9;
+    padding: 30px 40px;
+    border-radius: 30px;
+}
+
+
+.input-field{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid rgb(235, 235, 235);
+    padding: 15px 15px;
+    background-color: rgb(235, 235, 235);
+}
+
+.input-field input{
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+}
+
+.input-field input:focus{
+    outline: none;
+}
+
+.input-field i{
+    width: 30px;
+    height: 100%;
+    font-size: 25px;
+    
+}
+
+.errormess{
+    width: 60%;
+    margin: 5px auto;
+
+}
+
+.btn-login{
+    width: 30%;
+    padding: 10px 10px;
+    display: block;
+    margin: auto;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.register-forgot{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.social-media{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-between;
+    
+}
+
+.error-mess{
+    width: 60%;
+    margin: auto;
+    color: red;
+    
+
+}
+
+
+@media screen and (max-height : 668px ) {
+    .body-login-content{
+        bottom: 15%;
+    }
+
+    .signin-signup{
+        bottom: 9%;
+    }
+}
+
+
+
+@media screen and (max-width : 703px) {
+    .title{
+        font-size: 20px;
+    }
+    .body-login-content{
+        width: 90%;
+        font-size: 16px;
+        padding: 10px 20px;
+        left: 6%;
+    }
+    .btn-login{
+        width: 30%;
+        padding: 5px 5px;
+        font-size: 14px;
+    }
+    
+    .input-field i{
+        width: 30px;
+        height: 100%;
+        font-size: 20px;
+        
+    }
+}
+
+
+@media screen and (max-width : 1385px) {
+    .body-login-content{
+        width: 55%;
+        left: 20%;
+    }
+}
+
+@media screen and (max-width : 1200px) {
+    .body-login-content{
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@media screen and (max-width : 1005px) {
+    .register-forgot{
+        flex-direction: column;
+    }
+    
+    .title{
+        font-size: 30px;
+    }
+}
+    
+
+
+@media screen and (max-width : 400px) {
+    .title{
+        font-size: 20px;
+    }
+    .body-login-content{
+        width: 90%;
+        font-size: 16px;
+        padding: 10px 20px;
+        left: 6%;
+    }
+
+    .input-field{
+        width: 90%;
+    }
+
+    .input-field i{
+        width: 30px;
+        height: 100%;
+        font-size: 15px;
+        
+    }
+
+    .error-mess{
+        font-size: 14px;
+        
+    
+    }
+
+    .btn-login{
+        width: 30%;
+        padding: 5px 5px;
+        font-size: 14px;
+    }
+
+
+    .register-forgot{
+        flex-direction: column;
+    }
+}
+
