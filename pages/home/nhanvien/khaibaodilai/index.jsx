@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useHistory, Link } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import "react-datepicker/dist/react-datepicker.css";
+import Staff from "../index";
 // import InformationStaff from "../Home/Components/InformationStaff";
 const MoveDeclaration = (props) => {
   let history = useHistory();
@@ -143,128 +144,129 @@ const MoveDeclaration = (props) => {
     );
   };
   return (
-    <div className="container my-4">
-      <div className='icon-back mb-3'>
-        <Link to={`/home/nhanvien/${props.user.id}`}>
-          <i className="fas fa-arrow-left"></i>
-        </Link>
-      </div>
-      <ToastContainer />
-      <h2 className="text-center">THÔNG TIN KHAI BÁO Y TẾ</h2>
-      <h3 className="text-center">( Khai di chuyển nội địa )</h3>
-      <p className="text-center text-danger">
-        Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có
-        thể xử lý hình sự
-      </p>
-      <p>Di chuyển trong nước</p>
-      <form action="" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="vehicle">
-            Phương tiện đi lại<span style={{ color: "red" }}> (*)</span>
-          </label>
-          <select
-            className="form-control col-6"
-            id="vehicle"
-            onChange={(e) => setValue({ ...value, vehicle: e.target.value })}
-            value={value.vehicle}
-            required
-          >
-            <option value="">-Chọn-</option>
-            <option value="Ô tô">Ô tô</option>
-            <option value="Xe máy">Xe máy</option>
-          </select>
+    <Staff>
+
+      <div className="container my-4">
+        <div className='icon-back mb-3'>
+            <i className="fas fa-arrow-left"></i>
         </div>
-        <Selector
-          proviceTitle="Nơi đi"
-          onChangeProvince={(e) => handleProvince(e)}
-          provinceSelected={value.provinceSelected}
-          province={province}
-          districtTitle="Điểm đi (Quận huyện)"
-          onChangeDistrict={(e) => handleDistrict(e)}
-          districtSelected={value.districtSelected}
-          district={district}
-          wardTitle="Điểm đi (Phường xã)"
-          onChangeWard={(e) => handleWard(e)}
-          wardSelected={value.wardSelected}
-          ward={ward}
-        />
-        <Selector
-          proviceTitle="Nơi đến"
-          onChangeProvince={(e) => handleProvinceDestination(e)}
-          provinceSelected={value.provinceDestinationSelected}
-          province={province}
-          districtTitle="Điểm đến (Quận huyện)"
-          onChangeDistrict={(e) => handleDistrictDestination(e)}
-          districtSelected={value.districtDestinationSelected}
-          district={districtDestination}
-          wardTitle="Điểm đến (Phường xã)"
-          onChangeWard={(e) => handleWardDestination(e)}
-          wardSelected={value.wardDestinationSelected}
-          ward={wardDestination}
-        />
-        <div className="form-row">
-          <div className="form-group col">
-            <label htmlFor="vehicleNumber">
-              Số phương tiện<span style={{ color: "red" }}> (*)</span>
+        <ToastContainer />
+        <h2 className="text-center">THÔNG TIN KHAI BÁO Y TẾ</h2>
+        <h3 className="text-center">( Khai di chuyển nội địa )</h3>
+        <p className="text-center text-danger">
+          Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có
+          thể xử lý hình sự
+        </p>
+        <p>Di chuyển trong nước</p>
+        <form action="" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="vehicle">
+              Phương tiện đi lại<span style={{ color: "red" }}> (*)</span>
             </label>
-            <input
-              type="text"
-              className="form-control"
-              id="vehicleNumber"
-              placeholder=""
-              onChange={(e) =>
-                setValue({ ...value, vehicleNumber: e.target.value })
-              }
-              value={value.vehicleNumber}
-              style={{ textTransform: "uppercase" }}
+            <select
+              className="form-control col-6"
+              id="vehicle"
+              onChange={(e) => setValue({ ...value, vehicle: e.target.value })}
+              value={value.vehicle}
               required
-            />
+            >
+              <option value="">-Chọn-</option>
+              <option value="Ô tô">Ô tô</option>
+              <option value="Xe máy">Xe máy</option>
+            </select>
           </div>
-          <div className="form-group col">
-            <label htmlFor="seatNumber">Số ghế</label>
-            <input
-              type="number"
-              className="form-control"
-              id="seatNumber"
-              placeholder=""
-              onChange={(e) =>
-                setValue({ ...value, seatNumber: e.target.value })
-              }
-              value={value.seatNumber}
-            />
+          <Selector
+            proviceTitle="Nơi đi"
+            onChangeProvince={(e) => handleProvince(e)}
+            provinceSelected={value.provinceSelected}
+            province={province}
+            districtTitle="Điểm đi (Quận huyện)"
+            onChangeDistrict={(e) => handleDistrict(e)}
+            districtSelected={value.districtSelected}
+            district={district}
+            wardTitle="Điểm đi (Phường xã)"
+            onChangeWard={(e) => handleWard(e)}
+            wardSelected={value.wardSelected}
+            ward={ward}
+          />
+          <Selector
+            proviceTitle="Nơi đến"
+            onChangeProvince={(e) => handleProvinceDestination(e)}
+            provinceSelected={value.provinceDestinationSelected}
+            province={province}
+            districtTitle="Điểm đến (Quận huyện)"
+            onChangeDistrict={(e) => handleDistrictDestination(e)}
+            districtSelected={value.districtDestinationSelected}
+            district={districtDestination}
+            wardTitle="Điểm đến (Phường xã)"
+            onChangeWard={(e) => handleWardDestination(e)}
+            wardSelected={value.wardDestinationSelected}
+            ward={wardDestination}
+          />
+          <div className="form-row">
+            <div className="form-group col">
+              <label htmlFor="vehicleNumber">
+                Số phương tiện<span style={{ color: "red" }}> (*)</span>
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="vehicleNumber"
+                placeholder=""
+                onChange={(e) =>
+                  setValue({ ...value, vehicleNumber: e.target.value })
+                }
+                value={value.vehicleNumber}
+                style={{ textTransform: "uppercase" }}
+                required
+              />
+            </div>
+            <div className="form-group col">
+              <label htmlFor="seatNumber">Số ghế</label>
+              <input
+                type="number"
+                className="form-control"
+                id="seatNumber"
+                placeholder=""
+                onChange={(e) =>
+                  setValue({ ...value, seatNumber: e.target.value })
+                }
+                value={value.seatNumber}
+              />
+            </div>
           </div>
-        </div>
-        <div className="form-row">
-          <div className="form-group col-6">
-            <label htmlFor="departureDate">
-              Ngày khởi hành<span style={{ color: "red" }}> (*)</span>
-            </label>
-            <DatePicker
-              dateFormat="dd/MM/yyyy"
-              closeOnScroll={true}
-              selected={value.startDate}
-              onChange={(date) => setValue({ ...value, startDate: date })}
-            />
+          <div className="form-row">
+            <div className="form-group col-6">
+              <label htmlFor="departureDate">
+                Ngày khởi hành<span style={{ color: "red" }}> (*)</span>
+              </label>
+              <DatePicker
+                dateFormat="dd/MM/yyyy"
+                closeOnScroll={true}
+                selected={value.startDate}
+                onChange={(date) => setValue({ ...value, startDate: date })}
+              />
+            </div>
           </div>
-        </div>
-        <div className="d-flex justify-content-center mt-3">
-          {!disable ? (
-            <button type="submit" className="btn btn-success">
-              Gửi tờ khai
-            </button>
-          ) : (
-            <button className="btn btn-primary btn-success" type="button" disabled>
-              <span
-                className="spinner-border spinner-border-sm "
-                role="status"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Loading...</span>
-            </button>
-          )}
-        </div>
-      </form>
-    </div>
+          <div className="d-flex justify-content-center mt-3">
+            {!disable ? (
+              <button type="submit" className="btn btn-success">
+                Gửi tờ khai
+              </button>
+            ) : (
+              <button className="btn btn-primary btn-success" type="button" disabled>
+                <span
+                  className="spinner-border spinner-border-sm "
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                <span className="sr-only">Loading...</span>
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+    </Staff>
   );
 };
 

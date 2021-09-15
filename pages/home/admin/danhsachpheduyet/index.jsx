@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Admin from "..";
 
 const ListOfStaffTrip = () => {
   const [list, setList] = useState([]);
@@ -87,6 +88,8 @@ const ListOfStaffTrip = () => {
   };
 
   return (
+    <Admin>
+
     <div className="container mt-5 pt-5">
       <table className="table mt-5">
         <thead>
@@ -142,6 +145,7 @@ const ListOfStaffTrip = () => {
         )}
       </table>
     </div>
+    </Admin>
   );
 };
 

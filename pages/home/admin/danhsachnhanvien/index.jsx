@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Admin from "..";
 import * as axiosCallApi from "../api/index";
 
 const ListOfStaff = (props) => {
@@ -22,7 +23,6 @@ const ListOfStaff = (props) => {
           setList(response.data);
         });
     }
-
     getListOfStaff();
   }, []);
 
@@ -60,7 +60,9 @@ const ListOfStaff = (props) => {
     }
   };
 
-  return (
+  return(
+  <Admin >
+
     <div className="container mt-5 pt-5">
       <h3 className="text-center ">Danh sách nhân viên</h3>
 
@@ -119,6 +121,7 @@ const ListOfStaff = (props) => {
         )}
       </table>
     </div>
+  </Admin>
   );
 };
 

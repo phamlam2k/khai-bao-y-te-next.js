@@ -4,8 +4,9 @@ import Header from "./Components/Header";
 import {useRouter} from "next/router";
 import axios from "axios";
 import Footer from "./Components/Footer";
-import { LoadingPage } from "./Components/LoadingPage";
-const Home = () => {
+import BodyCotent from "./list";
+// import { LoadingPage } from "./Components/LoadingPage";
+const Home = ({children}) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState({
@@ -22,16 +23,16 @@ const Home = () => {
 
   useEffect(() => {
     return axios
-      .get(`https://611b1bf022020a00175a4341.mockapi.io/User/${router.query.id}`)
+      .get(`https://611b1bf022020a00175a4341.mockapi.io/User/${localStorage.getItem("accessToken")}`)
       .then((res) =>{
-
-        setLoading(false);
+        
         setUsers(res.data);
+        setLoading(false);
       })
       .catch(function (err) {
         console.log(err)
       });
-  }, [router]);
+  },[]);
 
   const onDropDown = () => {
     var logout = document.querySelector(".user .logout");
@@ -74,7 +75,7 @@ const Home = () => {
                 id={users.id}
             />
             <BannerHeader />
-
+              {children}
 
             <Footer image="" />
             </>

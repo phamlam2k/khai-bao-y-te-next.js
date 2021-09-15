@@ -1,0 +1,307 @@
+.header{
+    background: linear-gradient(to right,rgb(18,87,192) 10%, rgb(1,102,222) 50%);
+    border-bottom:1px solid rgb(73, 136, 224) ;
+}
+
+
+.header .img-header {
+    cursor: pointer;
+    width: 100px;
+    height: 70px;
+}
+
+.header-content{
+    width: 58%;
+    margin : auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.user{
+    display: flex;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #4988e0;
+    border-radius: 10px;
+    align-self: center;
+    align-items: center;
+    color: white;
+    padding-left: 8px;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.user i {
+    
+    width: 30px;
+}
+
+.user span {
+    margin-left: 5px;
+}
+
+.log{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top : 36px;
+    left: -1px;
+    overflow: hidden;
+    display: none;
+}
+
+.user .logout{
+    position: absolute;
+    z-index: -1;
+    top: -45px;
+    left: -1px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4988e0;
+    padding: 10px;
+    transition: 0.5s;
+}
+.log:hover{
+    color: white;
+}
+
+.header-content .active{
+    background-color: white;
+    
+}
+
+.logout-icon{
+    text-align: right;
+}
+
+.banner{
+    width: 100%;
+    background-image: url('https://bluezone.gov.vn/WebBluezone/BluezoneHome/main-banner.png?98433452347326453274823759832') ;
+    background-size: cover;
+    height: 500px;
+    background-position: center top;
+    padding-top: 75px;
+}
+
+
+.banner-child{
+    color: white;
+    width: 58%;
+    margin: auto;
+    
+}
+
+.banner-content-top p{
+    font-weight: 600;
+    padding-top: 8px;
+}
+
+.banner-content-bottom{
+    margin-top: 60px;
+}
+
+.banner-content-bottom p{
+    font-weight: 600;
+    padding-top: 8px;
+}
+
+
+.content {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: auto;
+    justify-content: space-between;
+    --column : 3;
+    
+}
+
+.content li {
+    margin-top: 50px;
+    background-color: rgb(242,242,242);
+    width: calc(calc(100% / var(--column)) - 30px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.image-map-hand-wash{
+    width: 100%;
+}
+
+.image-map-hand-wash img{
+    width: 100%;
+    height: 1000px;
+}
+
+.footer{
+    background-color: #6B6B6B;
+    width: 100%;
+    color: white;
+    margin-top: 70px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.footer-content{
+    width: 60%;
+    margin: auto;
+    display: flex;
+}
+
+.footer-content h2{
+    text-shadow: black -3px 3px;
+    margin-bottom: 40px;
+}
+
+.contact-vietnam{
+    width: 60%;
+    margin-top: 40px;
+
+}
+
+.contact-vietnam h4{
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.contact-vietnam div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.contact-vietnam div i{
+    width: 30px;
+    
+}
+.icon-footer{
+    width: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.icon-footer .image-footer{
+    width: 300px;
+    height: 200px;
+
+}
+
+/*Staff CSS*/
+
+.bg-info-staff{
+
+
+}
+
+.card-staff{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+
+
+}      
+
+.card-staff img{
+    width: 50%;
+    display: block;
+    margin: auto;
+    
+}
+
+.info-staff ul{
+    list-style: none;
+    font-size: 20px;
+
+}
+
+
+
+@media only screen and (max-width: 1239px){
+    .content {
+        --column : 2;
+        padding-left: 0;
+    }
+    
+    .content li:last-child{
+        margin: 50px auto;
+    }
+
+    .contact-vietnam{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .icon-footer{
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (max-width: 835px) {
+    
+    .content{
+        --column : 1;
+        justify-content: center;
+    }
+    .content li {
+        width: calc(calc(100% / var(--column)) - 150px);
+        
+        
+    }
+}
+@media only screen and (max-width: 769px) {
+    .header-content{
+        width: 100%;
+    }
+    .banner{
+        background-image: url('https://bluezone.gov.vn/WebBluezone/BluezoneHome/main-banner-mb-new.png?98433452347326453274823759832');
+        background-position: center top;
+        background-color: #015CD0;
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: contain;
+        margin: auto;
+        
+    }
+    .footer-content{
+        width:87%;
+       
+    }
+    
+    .banner-child{
+        padding-top: 110px;
+    }
+
+    .banner-child h1{
+        font-size: 25px;
+    }
+
+    .banner-child p {
+        font-size: 13px;
+    }
+    
+    .banner-content-bottom{
+        margin-top: 30px;
+    }
+
+    .content li {
+        width: calc(calc(100% / var(--column)) - 30px);
+    }
+
+    
+    
+}

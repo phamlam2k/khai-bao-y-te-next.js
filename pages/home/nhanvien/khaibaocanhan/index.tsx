@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import Input from "./../components/Input";
-import RadioButton from "./../components/RadioButton";
-import "./../Style/style.css";
-import Selection from "./../components/Selection";
-import Question from "./../components/Question";
-import DetailQuestionTable from "./../components/DetailQuestion_Table";
-import Button from "./../components/Button";
+import Input from "./components/Input";
+import RadioButton from "./components/RadioButton";
+import Selection from "./components/Selection";
+import Question from "./components/Question";
+import DetailQuestionTable from "./components/DetailQuestion_Table";
+import Button from "./components/Button";
 import { ToastContainer, toast } from "react-toastify";
 import {
   validateValue,
@@ -14,8 +13,11 @@ import {
   _isYear,
   _isPhoneNumber,
   _isNumber,
-} from "./../scripts/Validate";
-import * as axiosCallAPI from "./../api/index";
+} from "./scripts/Validate";
+import * as axiosCallAPI from "./api/index";
+import Staff from "../index";
+
+
 function FormHealDeclaration(props: any) {
   let history = useHistory();
   const [disable, setDisable] = useState(false);
@@ -191,6 +193,8 @@ function FormHealDeclaration(props: any) {
     }
   };
   return (
+    <Staff>
+
     <form
       className="container mt-5"
       method="post"
@@ -200,9 +204,7 @@ function FormHealDeclaration(props: any) {
     >
       <ToastContainer />
       <div className='icon-back mb-3'>
-        <Link to={`/home/nhanvien/${props.user.id}`}>
           <i className="fas fa-arrow-left"></i>
-        </Link>
       </div>
       <h3 className="text-center">Khai báo y tế cho nhân viên</h3>
       <h6 className="text-center">( PHÒNG CHỐNG DỊCH COVID-19 )</h6>
@@ -336,6 +338,7 @@ function FormHealDeclaration(props: any) {
         </div>
       </div>
     </form>
+    </Staff>
   );
 }
 

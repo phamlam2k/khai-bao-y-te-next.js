@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <div className="header">
             <div className="header-content">
-                <Link to={`/home/nhanvien/${props.id}`}><img src={props.image} onClick={props.onReturnHome} alt="" className='img-header'/></Link>
+                <a href={`/home/nhanvien/${props.id}`}><img src={props.image} onClick={props.onReturnHome} alt="" className='img-header'/></a>
                 <div className='user' onClick={props.onDropDown}>
                     <i className="far fa-user"></i>
                     <span style={{ flex : '1'}}>{props.name}</span>
