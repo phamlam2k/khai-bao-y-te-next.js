@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import BannerHeader from "./Components/BannerHeader";
 import Header from "./Components/Header";
 import {useRouter} from "next/router";
@@ -6,7 +6,11 @@ import axios from "axios";
 import Footer from "./Components/Footer";
 import BodyCotent from "./list";
 // import { LoadingPage } from "./Components/LoadingPage";
-const Home = ({children}) => {
+
+export const staffProvider = createContext();
+
+const Staff = ({children}) => {
+  console.log(children)
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState({
@@ -60,28 +64,39 @@ const Home = ({children}) => {
     router.push("/")
   };
 
+  const data ={
+    users
+  }
+
   return (
-      <>
-        {loading ? (
-            <LoadingPage />
-        ) : (
-            <>
+    <>
+    {loading ? (
+      <LoadingPage />
+      ) : (
+        <>
             <Header
-                key = {users.id}
-                onDropDown={onDropDown}
-                onReturnLogin={onReturnLogin}
-                image=""
-                name={users.user.name}
-                id={users.id}
+              key = {users.id}
+              onDropDown={onDropDown}
+              onReturnLogin={onReturnLogin}
+              image=""
+              name={users.user.name}
+              id={users.id}
             />
             <BannerHeader />
-              {children}
+            
+              <staffProvider.Provider value={data}>
+                {children}
+              </staffProvider.Provider>
 
             <Footer image="" />
             </>
         )}
-      </>
+    </>
   );
 };
 
-export default Home;
+export default Staff;
+
+export function useStaffContext(){
+  return useContext(staffProvider)
+}

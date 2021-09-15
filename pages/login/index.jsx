@@ -48,7 +48,7 @@ const Login = () => {
                 } else if (formik.values.email === items.user.email && formik.values.password === items.user.password && items.user.admin === false) {
                     localStorage.setItem("accessToken", items.id)
                     setRedirect(true);
-                    Router.push(`/home/nhanvien`)
+                    Router.push(`/home/nhanvien/list`)
                 }
                 else {
                     count++;
