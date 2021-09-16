@@ -3,6 +3,7 @@ import { BrowserRouter as Router , Route, Switch, useHistory } from "react-route
 import { useRouter } from "next/router";
 
 import axios from "axios";
+import HeadAdmin from "./head";
 const Admin = ({children}) => {
   const history = useHistory();
   const [user, setUser] = useState({
@@ -38,6 +39,7 @@ const Admin = ({children}) => {
   return (
 
       <>
+        <HeadAdmin/>
         <div className="body">
                 <div className="body-top">
                     <div className="header-admin">

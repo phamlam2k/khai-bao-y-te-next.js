@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from "next/link"
-import Staff from '.';
+import Staff from '../index';
+import Image from 'next/image';
+import image from '../PictureOfHome/Screenshot_70.png'
 const BodyCotent = (props) => {
 
     const list = [
@@ -16,14 +18,7 @@ const BodyCotent = (props) => {
             link : `/home/nhanvien/khaibaodilai`,
             text : 'Khai báo đi lại'
         },
-        {
-            class : 'info',
-            class_child : 'text-center',
-            link : `/home/nhanvien/thongtinnhanvien`,
-            text : 'Thông tin nhân viên'
-        }
     ]
-
 
     return (
         <Staff>
@@ -33,17 +28,16 @@ const BodyCotent = (props) => {
                         (li,index) =>
 
                         <li className={li.class} key={index}>
-                            <a href={li.link}>
-                                <img src="" alt="" />
-                                <h4 className={li.class_child}>{li.text}</h4>
-                            </a>
+                            <Link href={li.link}>
+                                <a>
+                                    <Image src={image} alt="" />
+                                    <h4 className={li.class_child}>{li.text}</h4>
+                                </a>
+                            </Link>
                         </li>
-
                     )
                 }
-                
             </ul>
-
         </Staff>
 
     )

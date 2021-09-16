@@ -5,10 +5,11 @@ import Selector from "./components/Selector";
 import getData from "./Services/getData";
 import postData from "./Services/postData";
 import { ToastContainer, toast } from "react-toastify";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 import "react-datepicker/dist/react-datepicker.css";
-import Staff from "../index";
+import Staff, { useStaffContext } from "../index";
 // import InformationStaff from "../Home/Components/InformationStaff";
 const MoveDeclaration = (props) => {
   let history = useHistory();
@@ -145,10 +146,11 @@ const MoveDeclaration = (props) => {
   };
   return (
     <Staff>
-
       <div className="container my-4">
-        <div className='icon-back mb-3'>
+        <div className="icon-back mb-3">
+          <Link href={`/home/nhanvien/list`}>
             <i className="fas fa-arrow-left"></i>
+          </Link>
         </div>
         <ToastContainer />
         <h2 className="text-center">THÔNG TIN KHAI BÁO Y TẾ</h2>
@@ -254,7 +256,11 @@ const MoveDeclaration = (props) => {
                 Gửi tờ khai
               </button>
             ) : (
-              <button className="btn btn-primary btn-success" type="button" disabled>
+              <button
+                className="btn btn-primary btn-success"
+                type="button"
+                disabled
+              >
                 <span
                   className="spinner-border spinner-border-sm "
                   role="status"

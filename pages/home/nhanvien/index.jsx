@@ -4,13 +4,12 @@ import Header from "./Components/Header";
 import {useRouter} from "next/router";
 import axios from "axios";
 import Footer from "./Components/Footer";
-import BodyCotent from "./list";
-// import { LoadingPage } from "./Components/LoadingPage";
+import HeadStaff from './head';
+import { Container } from "react-bootstrap";
 
-export const staffProvider = createContext();
+
 
 const Staff = ({children}) => {
-  console.log(children)
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState({
@@ -23,27 +22,27 @@ const Staff = ({children}) => {
       idStaff: "",
     },
   });
-
-
+  
+  
   useEffect(() => {
     return axios
-      .get(`https://611b1bf022020a00175a4341.mockapi.io/User/${localStorage.getItem("accessToken")}`)
-      .then((res) =>{
-        
-        setUsers(res.data);
-        setLoading(false);
-      })
-      .catch(function (err) {
-        console.log(err)
-      });
+    .get(`https://611b1bf022020a00175a4341.mockapi.io/User/${localStorage.getItem("accessToken")}`)
+    .then((res) =>{
+      
+      setUsers(res.data);
+      setLoading(false);
+    })
+    .catch(function (err) {
+      console.log(err)
+    });
   },[]);
-
+  
   const onDropDown = () => {
     var logout = document.querySelector(".user .logout");
     var user = document.querySelector(".user");
     var active = document.querySelector(".header-content .active");
     var log = document.querySelector(".log");
-
+    
     if (!document.querySelector(".header-content").contains(active)) {
       log.style.display = "block";
       logout.style.top = "0px";
@@ -58,18 +57,19 @@ const Staff = ({children}) => {
       log.style.display = "none";
     }
   };
-
+  
   const onReturnLogin = () => {
     localStorage.removeItem("accessToken");
     router.push("/")
   };
-
+  
   const data ={
     users
   }
-
+  
   return (
     <>
+    <HeadStaff />
     {loading ? (
       <LoadingPage />
       ) : (
@@ -78,16 +78,15 @@ const Staff = ({children}) => {
               key = {users.id}
               onDropDown={onDropDown}
               onReturnLogin={onReturnLogin}
-              image=""
               name={users.user.name}
               id={users.id}
-            />
+              />
             <BannerHeader />
-            
-              <staffProvider.Provider value={data}>
-                {children}
-              </staffProvider.Provider>
+            {children}
+            <div className="content mt-5">
+            <h4>Cấp phép đi lại : {users.user.noteTravel}</h4>
 
+            </div>
             <Footer image="" />
             </>
         )}
@@ -96,7 +95,3 @@ const Staff = ({children}) => {
 };
 
 export default Staff;
-
-export function useStaffContext(){
-  return useContext(staffProvider)
-}

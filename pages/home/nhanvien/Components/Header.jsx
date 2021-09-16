@@ -1,12 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Link from 'next/link';
+import Image from 'next/image';
+import image from '../PictureOfHome/coollogo_com-25637877.png';
 
 const Header = (props) => {
     
     return (
         <div className="header">
             <div className="header-content">
-                <a href={`/home/nhanvien/${props.id}`}><img src={props.image} onClick={props.onReturnHome} alt="" className='img-header'/></a>
+                <Link href={`/home/nhanvien/list`}>
+                    <a>
+                        <Image src={image} alt="" className='img-header'/>
+                    </a>
+                </Link>
                 <div className='user' onClick={props.onDropDown}>
                     <i className="far fa-user"></i>
                     <span style={{ flex : '1'}}>{props.name}</span>

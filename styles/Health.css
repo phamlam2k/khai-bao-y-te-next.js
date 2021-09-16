@@ -1,0 +1,118 @@
+.bg-green {
+    background-color: rgb(44, 160, 28);
+  }
+  .warning {
+    color: red;
+  }
+  
+  .input-container {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .input_container input {
+    border: 1px solid rgb(204, 204, 204);
+  }
+  
+  .input-container span {
+    color: red;
+  }
+  .input-container label {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .radiobutton_container {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .radiobutton_container p {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .radiobutton_container .input_container {
+    display: flex;
+  }
+  
+  .input_container .input_group {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .selection_container {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .selection_container label {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .selection_container span {
+    color: red;
+  }
+  
+  .selection_container select {
+    height: 28px;
+  }
+  
+  .title_group {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .question_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .question_container .input_group {
+    display: flex;
+  }
+  
+  .question_container:nth-child(2) {
+    padding: 0 20px;
+  }
+  
+  .question_title {
+    text-align: left;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+  }
+  
+  table tr:first-child(2) {
+    background-color: rgb(235, 235, 235);
+  }
+  table tbody{
+    height: 100%;
+  }
+  table tr th {
+    min-width: 50px;
+  }
+  table tr td {
+    text-align: left;
+    padding: 20px 10px;
+    font-size: 1.1rem;
+  }
+  /* Css for Button */
+  
+  .button_container input {
+    padding: 8px 20px;
+    border-radius: 17px;
+    color: #fff;
+    outline: none;
+    border: none;
+  }
+  

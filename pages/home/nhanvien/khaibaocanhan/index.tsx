@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Link from "next/link";
 import Input from "./components/Input";
 import RadioButton from "./components/RadioButton";
 import Selection from "./components/Selection";
@@ -204,7 +205,9 @@ function FormHealDeclaration(props: any) {
     >
       <ToastContainer />
       <div className='icon-back mb-3'>
+        <Link href={`/home/nhanvien/list`}>
           <i className="fas fa-arrow-left"></i>
+        </Link>
       </div>
       <h3 className="text-center">Khai báo y tế cho nhân viên</h3>
       <h6 className="text-center">( PHÒNG CHỐNG DỊCH COVID-19 )</h6>
