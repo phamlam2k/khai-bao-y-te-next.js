@@ -71,7 +71,7 @@ const Staff = ({children}) => {
     <>
     <HeadStaff />
     {loading ? (
-      <LoadingPage />
+      <div>Loading</div>
       ) : (
         <>
             <Header

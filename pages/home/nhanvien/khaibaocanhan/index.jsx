@@ -19,13 +19,13 @@ import * as axiosCallAPI from "./api/index";
 import Staff from "../index";
 
 
-function FormHealDeclaration(props: any) {
+function FormHealDeclaration(props) {
   let history = useHistory();
   const [disable, setDisable] = useState(false);
   const [province, setProvince] = useState([]);
   useEffect(() => {
     async function getListPro() {
-      await axiosCallAPI.getList("get", "province", null).then((res: any) => {
+      await axiosCallAPI.getList("get", "province", null).then((res) => {
         if (res.data.results !== null) {
           const { results } = res.data;
           setProvince(results);
@@ -36,7 +36,7 @@ function FormHealDeclaration(props: any) {
     getListPro();
   }, []);
   const [flagError, setFlagError] = useState(true);
-  const onhandleChange = (data: {name: string, value: string}) =>{
+  const onhandleChange = (data) =>{
     console.log(data);
     switch (data.name) {
       case "phone_number":
@@ -82,21 +82,21 @@ function FormHealDeclaration(props: any) {
 
   const [district, setDistrict] = useState([]);
   const [ward, setWard] = useState([]);
-  const handleSmProvince = async (dataSubmit: {name: string, type: string, index: number, title: string}) => {
+  const handleSmProvince = async (dataSubmit) => {
     console.log(dataSubmit);
     if (dataSubmit != null) {
       switch (dataSubmit.type) {
         case "province":
           await axiosCallAPI
             .getList("get", `province/district/${dataSubmit.index}`)
-            .then((res: any) => {
+            .then((res) => {
               setDistrict(res.data.results);
             });
           break;
         case "district":
           await axiosCallAPI
             .getList("get", `province/ward/${dataSubmit.index}`)
-            .then((res: any) => {
+            .then((res) => {
               setWard(res.data.results);
             });
           break;
@@ -105,18 +105,18 @@ function FormHealDeclaration(props: any) {
       }
     }
   };
-  const _func_CheckBeforeSubmit = (input_data: any) =>{
+  const _func_CheckBeforeSubmit = (input_data) =>{
     let flag = true;
     if (input_data == null) return false;
     console.log(input_data[0]);
     return flag;
   }
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = document.getElementById("Form_Submit_Heal") as HTMLFormElement;
-    var data: any = new FormData(form);
+    const form = document.getElementById("Form_Submit_Heal") ;
+    var data = new FormData(form);
     console.log(data);
-    let _TempData: any = {};
+    let _TempData = {};
     for (let [name, value] of data) {
       _TempData = {
         ..._TempData,

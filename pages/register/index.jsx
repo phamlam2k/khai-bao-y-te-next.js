@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from 'next/link'
 
-const register = () => {
+const Register = () => {
   const [redirect, setRedirect] = useState(false);
   const [disable, setDisable] = useState(false);
   function guidGenerator() {
@@ -86,9 +87,9 @@ const register = () => {
           <div className="signin-signup">
             <form className="sign-in-form" onSubmit={formik.handleSubmit}>
               <div className='back-to-login' >
-                <a href="/">
+                <Link href="/">
                   <i className="fas fa-arrow-left"></i>
-                </a>
+                </Link>
               </div>
               <h2 className="title text-center">Sign up</h2>
               <div className="input-field mt-5">

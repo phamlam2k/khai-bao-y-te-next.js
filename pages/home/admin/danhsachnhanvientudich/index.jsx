@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Admin from "..";
+import axios from "axios";
 
 const ListOfStaffCovid = () => {
   const [listCovid, setListCovid] = useState([]);
@@ -8,7 +9,6 @@ const ListOfStaffCovid = () => {
   const [loading, setLoading] = useState(false);
   const input_find = useRef(null);
   const [state, setState] = useState({});
-  const axios = require("axios");
   useEffect(() => {
     axios
       .get("https://611b1bf022020a00175a4341.mockapi.io/Khaibaoyte")

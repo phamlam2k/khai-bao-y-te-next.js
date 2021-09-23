@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import axios from 'axios';
+import Link from "next/link"
 
 import Router from "next/router";
 
@@ -38,7 +39,7 @@ const Login = () => {
                 .required('Không được để trống !'),
 
         }),
-        onSubmit: (values) => {
+        onSubmit: () => {
             let count = 0;
             list.forEach((items, index) => {
                 if (formik.values.email === items.user.email && formik.values.password === items.user.password && items.user.admin === true) {
@@ -56,7 +57,6 @@ const Login = () => {
             })
             console.log(count)
             if (count === list.length) {
-                alert("Vui long nhap lai tai khoan mat khau")
                 setError("Tài Khoản hoặc  Mật Khẩu không đúng !");
             }
 
@@ -142,7 +142,7 @@ const Login = () => {
                             <button type="submit" value="Login" className="btn btn-outline-secondary mt-4 btn-login">Login</button>
                             
                             <div className="register-forgot mt-4 text-center">
-                                <a className='mt-2' href="/register">Not a member yet? Sign up </a>
+                                <Link className='mt-2' href="/register">Not a member yet? Sign up </Link>
                             </div>
 
                            
