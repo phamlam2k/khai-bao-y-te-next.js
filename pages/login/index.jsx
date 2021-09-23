@@ -54,7 +54,9 @@ const Login = () => {
                     count++;
                 }
             })
+            console.log(count)
             if (count === list.length) {
+                alert("Vui long nhap lai tai khoan mat khau")
                 setError("Tài Khoản hoặc  Mật Khẩu không đúng !");
             }
 
