@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import useFetch from "./Services/useFetch";
 import Selector from "./components/Selector";
-import getData from "./Services/getData";
-import postData from "./Services/postData";
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 import Link from "next/link";
 import "react-toastify/dist/ReactToastify.css";
 import "react-datepicker/dist/react-datepicker.css";
-import Staff, { useStaffContext } from "../index";
-// import InformationStaff from "../Home/Components/InformationStaff";
+import Staff from "../index";
 const MoveDeclaration = (props) => {
   let history = useHistory();
   const [disable, setDisable] = useState(false);
@@ -59,7 +55,7 @@ const MoveDeclaration = (props) => {
       const district = province.results.filter(
         (word) => word.province_name === e.target.value
       )[0].province_id;
-      getData(
+      fetch(
         `https://vapi.vnappmob.com/api/province/district/${district}`
       ).then((data) => {
         setDistrict(data);
@@ -72,13 +68,37 @@ const MoveDeclaration = (props) => {
       const district = province.results.filter(
         (word) => word.province_name === e.target.value
       )[0].province_id;
-      getData(
+      fetch(
         `https://vapi.vnappmob.com/api/province/district/${district}`
       ).then((data) => {
         setDistrictDestination(data);
       });
     }
   };
+  const useFetch = (url) => {
+    const [data, setData] = useState();
+      fetch(url)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setData(data);
+        });
+    return { data };
+  };
+
+  const postData = (url, data, handleSuccess, handleError) => {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then(handleSuccess)
+      .catch(handleError);
+  }
 
   const handleDistrict = (e) => {
     setValue({ ...value, districtSelected: e.target.value });
@@ -86,7 +106,7 @@ const MoveDeclaration = (props) => {
       const ward = district.results.filter(
         (word) => word.district_name === e.target.value
       )[0].district_id;
-      getData(`https://vapi.vnappmob.com/api/province/ward/${ward}`).then(
+      fetch(`https://vapi.vnappmob.com/api/province/ward/${ward}`).then(
         (data) => {
           setWard(data);
         }
@@ -100,13 +120,17 @@ const MoveDeclaration = (props) => {
       const ward = districtDestination.results.filter(
         (word) => word.district_name === e.target.value
       )[0].district_id;
-      getData(`https://vapi.vnappmob.com/api/province/ward/${ward}`).then(
+      fetch(`https://vapi.vnappmob.com/api/province/ward/${ward}`).then(
         (data) => {
           setWardDestination(data);
         }
       );
     }
   };
+  const existsData = (url) => {
+    const result = fetch(url, { method: 'HEAD' });
+    return result.ok;
+  }
   const handleWard = (e) => {
     setValue({ ...value, wardSelected: e.target.value });
   };
