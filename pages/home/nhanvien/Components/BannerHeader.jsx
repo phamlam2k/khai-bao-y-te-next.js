@@ -30,7 +30,6 @@ const BannerHeader = () => {
                             <h1>{content.h1}</h1>
                             <p>{content.p1} <br/> {content.p2}</p>
                         </div>
-               
                     )
                 }
             </div>

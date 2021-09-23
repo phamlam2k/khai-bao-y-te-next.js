@@ -1,6 +1,6 @@
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import Admin from "..";
-import * as axiosCallApi from "../api/index";
 
 const ListOfStaff = (props) => {
   const input_find = useRef(null);
@@ -11,7 +11,7 @@ const ListOfStaff = (props) => {
   useEffect(() => {
     setLoading(true);
     async function getListOfStaff() {
-      await axiosCallApi
+      await axios
         .get(
           "get",
           "https://611b1bf022020a00175a4341.mockapi.io/Khaibaoyte",
@@ -29,8 +29,8 @@ const ListOfStaff = (props) => {
   const onDelete = (value_id) => {
     if (window.confirm("Do you really want to delete this item ?")) {
       async function deleteElement() {
-        await axiosCallApi
-          .deleteListOfInformation("delete", value_id, null)
+        await axios
+          .delete(`https://611b1bf022020a00175a4341.mockapi.io/Khaibaoyte/${value_id}`)
           .then(() => {
             alert("Bạn đã xóa thành công");
           })

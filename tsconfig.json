@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/home/nhanvien/khaibaocanhan/index.jsx"  ],
+, "pages/home/nhanvien/khaibaocanhan/index.jsx", "pages/home/nhanvien/khaibaocanhan/components/RadioButton.jsx", "pages/home/nhanvien/khaibaocanhan/components/Button.jsx", "pages/home/nhanvien/khaibaocanhan/components/Input.jsx", "pages/home/nhanvien/khaibaocanhan/components/Question.jsx"  ],
   "exclude": [
     "node_modules"
   ]
